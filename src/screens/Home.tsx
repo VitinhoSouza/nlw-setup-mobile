@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { Text, View, ScrollView, Alert } from "react-native";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 
@@ -41,15 +41,11 @@ export function Home() {
     }
   }
 
-//   useFocusEffect(
-//     useCallback(() => {
-//       fetchData();
-//     }, [])
-//   );
-
-  useEffect(()=>{
-    fetchData();
-  },[])
+  useFocusEffect(
+    useCallback(() => {
+      fetchData();
+    }, [])
+  );
 
   if (loading) {
     return (
